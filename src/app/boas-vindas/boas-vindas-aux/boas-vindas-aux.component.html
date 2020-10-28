@@ -1,0 +1,6 @@
+<form [formGroup]="formGroup" novalidate>
+    <p *ngIf="this.formGroup != null">boas-vindas-aux works!</p>
+    <span>
+        {{this.formGroup.getRawValue() | json}}
+    </span>
+</form>
