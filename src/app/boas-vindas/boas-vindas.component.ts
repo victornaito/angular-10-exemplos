@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { catchError, isEmpty, switchMap, take, tap } from 'rxjs/operators';
+import { catchError, isEmpty, take, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-boas-vindas',
@@ -8,6 +8,7 @@ import { catchError, isEmpty, switchMap, take, tap } from 'rxjs/operators';
   styleUrls: ['./boas-vindas.component.scss']
 })
 export class BoasVindasComponent implements OnInit {
+
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -18,7 +19,7 @@ export class BoasVindasComponent implements OnInit {
       take(1),
       catchError(isEmpty())
     ).toPromise();
-
+    
     // console.log("Data.Resolve", response.resolve);
   }
 
